@@ -10,12 +10,12 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine', 'requirejs'],
+    frameworks: ['requirejs','chai','mocha'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      {pattern: 'test/*.js', included: false}
+      {pattern: 'test/*.js', included: true}
     ],
 
 
@@ -24,10 +24,11 @@ module.exports = function(config) {
     ],
 
     plugins: [
-    'karma-jasmine',
-    'karma-coverage',
     'karma-requirejs',
-    'phantomjs'
+    'karma-chai',
+    'karma-mocha',
+    'karma-coverage',
+    'karma-phantomjs-launcher'
 ],
 
     // preprocess matching files before serving them to the browser
@@ -38,20 +39,7 @@ module.exports = function(config) {
 
 
     // test results reporter to use
-    // possible values: 'dots', 'progress'
-    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
-
-
-    // web server port
-    port: 9876,
-
-
-    // enable / disable colors in the output (reporters and logs)
-    colors: true,
-
-
-    // level of logging
+    // possible values: 'dots',
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
     logLevel: config.LOG_INFO,
 

@@ -34,7 +34,7 @@ module.exports = {
 		var password = req.body.password;
 		var location = req.body.location;
 		var loanthing = req.body.loanthing;
-
+ 		console.log(req.body);
 		new User({username: username}).fetch().then(function(user){
 			if(!user){
 				bcrypt.hash(password,null,null,function(err,hash){

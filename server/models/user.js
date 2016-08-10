@@ -1,6 +1,5 @@
 var db = require('../DBconfig.js');
 var Loan = require('./loan.js');
-var bcrypt = require('bcrypt-nodejs');
 
 var User = db.Model.extend({
 	tableName: 'users',
@@ -8,7 +7,7 @@ var User = db.Model.extend({
 
 	loan: function(){
 		return this.hasMany(Loan);
-	},
+	}
 
 // initialize: function() {
 //     this.on('creating', this.hashPassword, this);

@@ -7,8 +7,9 @@
   "license": "Proprietary",
   "private": true,
   "scripts": {
-    "start": "./node_modules/.bin/nodemon --ignore node_modules shortly.js",
-    "test": "node shortly.js & ./node_modules/.bin/mocha --bail --reporter nyan test/ServerSpec.js; killall node;"
+    "start": "",
+    "test": "istanbul cover -x '*Spec.js' cover -x 'loan.js' cover -x 'user.js' node_modules/.bin/_mocha -- -R test ./test/*.js",
+    "server-test": "mocha"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
@@ -46,8 +47,10 @@
     "karma": "^1.1.2",
     "karma-coverage": "^1.1.1",
     "karma-jasmine": "^1.0.2",
+    "karma-mocha": "^1.1.1",
     "karma-phantomjs-launcher": "^1.0.1",
     "karma-requirejs": "^1.0.0",
+    "phantomjs": "^2.1.7",
     "requirejs": "^2.2.0",
     "run-sequence": "1.1.5",
     "tslint": "^3.10.1",
