@@ -6,7 +6,7 @@ angular.module('Faz3a.Servces' , [])
 	var signin = function(user){
 		return $http({
 			method: 'POST',
-			url: onlineURI + '/api/signin',
+			url: onlineURI+'/api/signin',
 			data: user
 		}).then(function(res){
 			return res.data;
@@ -16,7 +16,7 @@ angular.module('Faz3a.Servces' , [])
 	var signup = function(user){
 		return $http({
 			method: 'POST',
-			url: onlineURI + '/api/signup',
+			url: onlineURI+'/api/signup',
 			data: user
 		}).then(function(res){
 			return res.data.token;
