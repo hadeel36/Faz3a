@@ -1,1 +1,11 @@
 /* Empty. Add your own CSS if you like */
+.app-logo {
+	text-align: center;
+}
+
+#basic{
+	background-color: cornsilk;
+	margin: 100px;
+	width: 1380px;
+	height: 1700px;
+}
