@@ -12,6 +12,9 @@
     "server-test": "mocha",
     "postinstall" : "npm install -g bower; bower install;"
   },
+  "engines": {
+  "node": "4.4.7"
+  },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "bluebird": "1.0.8",
