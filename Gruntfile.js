@@ -27,7 +27,7 @@ module.exports = function(grunt){
 			files: ['Gruntfile.js', 'myIonic/www/**/*.js', './*.js'],
 			options: {
 				force: 'true',
-				jshintrc: 'jshintrc'
+				jshintrc: '.jshintrc'
 			}
 		},
 
@@ -36,21 +36,21 @@ module.exports = function(grunt){
 				files: ['myIonic/www/**/*.js'],
 				tasks: ['concat',
 						'uglify']
-			},
-			css: {
-				files: ['myIonic/www/**/*.css'],
-				tasks: ['cssmin']
 			}
+			// css: {
+			// 	files: ['myIonic/www/**/*.css'],
+			// 	tasks: ['cssmin']
+			// }
 
 		}
 	});
 	
-	grunt.task.registerTask('concat', ['concat']);
 	
-	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-watch');
+	//grunt.loadNpmTasks('grunt-contrib-concat');
+	//grunt.loadNpmTasks('grunt-contrib-uglify');
+	//grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 
+	 grunt.registerTask('default', ["jshint"]);
 	//grunt.task.registerTask('default' , ['jshint','concat','uglify','watch']);
 }
