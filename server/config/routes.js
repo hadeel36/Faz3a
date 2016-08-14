@@ -1,12 +1,12 @@
-var controller = require('../DBcontrollers');
-var helpers = require('./helpers');
+var controller = require('../DBcontrollers.js');
+var helpers = require('./helpers.js');
 
 module.exports = function (app, express) {
-	 app.post('/api/signin', controller.signin);
-	 app.post('/api/signup', controller.signup);
+	app.post('/api/signin', controller.signin);
+	app.post('/api/signup', controller.signup);
 
-	//  app.get('/api/friends',helpers.decode, controller.viewFriends);
-	//  app.post('/api/friends',helpers.decode, controller.viewFriend);
+	app.get('/api/home', controller.viewLoans);
+	app.post('/api/add', controller.addLoan);
 
 	//  //app.post('/api/friends', helpers.decode, controller.addFriend);
 	

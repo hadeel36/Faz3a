@@ -7,8 +7,10 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('Faz3a', ['ionic',
                         'Faz3a.Auth',
-                         'Faz3a.Servces',
-                          'ui.router'])
+                        'Faz3a.home',
+                        'Faz3a.index',
+                        'Faz3a.Servces',
+                        'ui.router'])
 
 // .run(function($ionicPlatform) {
 //   $ionicPlatform.ready(function() {
@@ -45,9 +47,15 @@ angular.module('Faz3a', ['ionic',
     url: '/signup',
     templateUrl: 'js/templates/signup.html',
     controller: 'Authcontroller'
+  })
+
+  .state('home', {
+    url: '/home',
+    templateUrl: 'js/templates/home.html',
+    controller: 'HomeController'
   });
 
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/signin');
 
  });
 

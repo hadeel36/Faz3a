@@ -23,9 +23,19 @@ angular.module('Faz3a.Servces' , [])
 		});
 	};
 
+	var viewLoans = function(){
+		return $http({
+			method: 'GET',
+			url: onlineURI+'/api /home'
+		}).then(function(res){
+			return res.data;
+		});
+	}
+
 	return {
 		signin: signin,
-		signup: signup
+		signup: signup,
+		viewLoans: viewLoans
 	};
 });
 

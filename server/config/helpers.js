@@ -17,7 +17,7 @@ module.exports = {
     var user;
 
     if (!token) {
-      return res.sendStatus(403); // send forbidden if a token is not provided
+      return res.send(403); // send forbidden if a token is not provided
     }
 
     try {
@@ -29,6 +29,6 @@ module.exports = {
     } catch (error) {
       return next(error);
     }
-    
+
   }
 };

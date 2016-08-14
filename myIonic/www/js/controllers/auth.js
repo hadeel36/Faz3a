@@ -26,4 +26,5 @@ angular.module('Faz3a.Auth' , ['ionic'])
 			console.log(error);
 		});
 	}
+
 });
