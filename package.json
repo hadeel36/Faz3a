@@ -9,7 +9,8 @@
   "scripts": {
     "start": "",
     "test": "istanbul cover -x '*Spec.js' cover -x 'loan.js' cover -x 'user.js' node_modules/.bin/_mocha -- -R test ./test/*.js",
-    "server-test": "mocha"
+    "server-test": "mocha",
+    "postinstall" : "npm install -g bower; bower install;"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
