@@ -30,6 +30,9 @@ angular.module('Faz3a', ['ionic',
 
 .config(function($stateProvider, $urlRouterProvider) {
 
+  $httpProvider.defaults.headers.common = {};
+  $httpProvider.defaults.headers.put = {};
+  $httpProvider.defaults.headers.patch = {};
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
