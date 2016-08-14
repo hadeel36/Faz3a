@@ -28,7 +28,7 @@ angular.module('Faz3a', ['ionic',
 //   });
 // })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
 
   $httpProvider.defaults.headers.common = {};
   $httpProvider.defaults.headers.put = {};
