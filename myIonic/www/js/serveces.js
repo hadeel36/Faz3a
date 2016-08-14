@@ -1,5 +1,5 @@
 var localURI = "http://localhost:8000";
-var onlineURI = "https://faz3a-app.herokuapp.com";
+var onlineURI = "http://faz3a-app.herokuapp.com";
 angular.module('Faz3a.Servces' , [])
 
 .factory('Auth',function($http, $location, $window){
