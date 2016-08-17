@@ -19,7 +19,8 @@
     <script src="cordova.js"></script>
  -->
     <!-- your app's js -->
-   
+ 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA305PsnfRQfvpTeih6hhtOTc5dW7qiMTs&libraries=geometry"></script>
   </head>
   <body ng-app="Faz3a" ng-controller='menuController'>
     <!--
@@ -31,6 +32,9 @@
       Templates are in the /templates folder (but you could also
       have templates inline in this html file if you'd like).
     -->
+
+
+ 
   <ion-header-bar align-title="left" class="bar-positive">
     <div class="buttons">
       <!-- <button class="button" ng-click="doSomething()">Left Button</button> -->
@@ -57,6 +61,8 @@
   <script src="js/serveces.js"></script>
   <script src="js/controllers/auth.js"></script>
   <script src="js/controllers/home.js"></script>
+   <script src="js/controllers/userProfile.js"></script>
+  <script src="js/controllers/map.js"></script>
   <script src="js/controllers/index.js"></script>
   <script src="app.js"></script>
 

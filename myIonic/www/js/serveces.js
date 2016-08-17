@@ -6,7 +6,7 @@ angular.module('Faz3a.Servces' , [])
 	var signin = function(user){
 		return $http({
 			method: 'POST',
-			url: onlineURI+'/api/signin',
+			url: localURI+'/api/signin',
 			data: user
 		}).then(function(res){
 			return res.data;
@@ -15,8 +15,8 @@ angular.module('Faz3a.Servces' , [])
 
 	var signup = function(user){
 		return $http({
-			method: 'POST',
-			url: onlineURI+'/api/signup',
+			method: 'POST', 
+			url: localURI+'/api/signup',
 			data: user
 		}).then(function(res){
 			return res.data.token;
@@ -26,16 +26,27 @@ angular.module('Faz3a.Servces' , [])
 	var viewLoans = function(){
 		return $http({
 			method: 'GET',
-			url: onlineURI+'/api /home'
+			url: localURI+'/api/viewLoans'
 		}).then(function(res){
 			return res.data;
 		});
-	}
+	};
+
+	var viewUsers = function(){
+		console.log("hello");
+		return $http({
+			method: 'GET',
+			url: localURI+'/api/viewUsers'
+		}).then(function(res){
+			return res.data;
+		});
+	};
 
 	return {
 		signin: signin,
 		signup: signup,
-		viewLoans: viewLoans
+		viewLoans: viewLoans,
+		viewUsers: viewUsers
 	};
 });
 

@@ -21,6 +21,8 @@ db.knex.schema.hasTable('users').then(function(exists) {
 			user.string('password' , 255);
 			user.string('location' , 255);
 			user.string('loanthing' , 255);
+			user.decimal('lat');
+			user.decimal('lng');
 			user.timestamps();
 		}).then(function(table){
 			console.log('Table Created' , table);

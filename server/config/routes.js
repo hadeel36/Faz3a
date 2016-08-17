@@ -5,8 +5,9 @@ module.exports = function (app, express) {
 	app.post('/api/signin', controller.signin);
 	app.post('/api/signup', controller.signup);
 
-	app.get('/api/home', controller.viewLoans);
-	app.post('/api/add', controller.addLoan);
+	app.get('/api/viewLoans', controller.viewLoans);
+	app.get('/api/viewUsers', controller.viewUsers);
+	app.post('/api/addLoan', controller.addLoan);
 
 	//  //app.post('/api/friends', helpers.decode, controller.addFriend);
 	

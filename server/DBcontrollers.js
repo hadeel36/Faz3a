@@ -7,6 +7,7 @@ var knex = require('knex');
 
 module.exports = {
 	signin: function(req,res,next){
+
 		var username = req.body.username;
 		var password = req.body.password;
 		new User({username:username}).fetch().then(function(user){
@@ -29,11 +30,16 @@ module.exports = {
 	},
 
 	signup: function(req,res,next){
+		console.log(req.body)
 		var username = req.body.username;
 		var fullname = req.body.fullname;
 		var password = req.body.password;
 		var location = req.body.location;
 		var loanthing = req.body.loanthing;
+		var lat = req.body.lat;
+		var lng = req.body.lng;
+		console.log(lat);
+		console.log(lng);
  
 		new User({username: username}).fetch().then(function(user){
 			if(!user){
@@ -44,7 +50,9 @@ module.exports = {
 						password: password,
 						fullname: fullname,
 						location: location,
-						loanthing: loanthing
+						loanthing: loanthing,
+						lat: lat,
+						lng: lng
 					});
 					newUser.save().then(function(){
 						var token = jwt.encode(newUser,'secret');
@@ -54,7 +62,6 @@ module.exports = {
 			}
 			else{
 				next(new Error('user exists'));
-				//res.status(500).send();
 			}
 		});
 	},
@@ -78,6 +85,14 @@ module.exports = {
 		newLoan.save().then(function(){
 			res.status(200);
 			res.json({done: 'done'});
+		});
+	},
+
+	viewUsers: function(req,res,next){
+		new User({}).fetchAll().then(function(users){
+			res.json({data: users});
+			res.status(200);
+			next();
 		});
 	}
 }

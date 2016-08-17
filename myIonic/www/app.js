@@ -8,6 +8,8 @@
 angular.module('Faz3a', ['ionic',
                         'Faz3a.Auth',
                         'Faz3a.home',
+                        'Faz3a.map',
+                        'Faz3z.Profile',
                         'Faz3a.index',
                         'Faz3a.Servces',
                         'ui.router'])
@@ -56,6 +58,18 @@ angular.module('Faz3a', ['ionic',
     url: '/home',
     templateUrl: 'js/templates/home.html',
     controller: 'HomeController'
+  })
+
+  .state('map', {
+    url: '/map',
+    templateUrl: 'js/templates/map.html',
+    controller: 'MapController'
+  })
+
+  .state('userProfile', {
+    url: '/userProfile',
+    templateUrl: 'js/templates/userProfile.html',
+    controller: 'userProfileController'
   });
 
   $urlRouterProvider.otherwise('/signin');
