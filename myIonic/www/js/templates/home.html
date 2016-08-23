@@ -1,41 +1,13 @@
- <ion-view>
+ <ion-tabs class="tabs-icon-top tabs-positive">
+    <ion-tab title="Borrow" icon="ion-home" href="#/home/borrow">
+      <ion-nav-view name="borrow-tab" class="has-header"></ion-nav-view>
+    </ion-tab>
+    
+    <ion-tab title="Borrow Item" icon="ion-trophy" href="#/home/borrowitem">
+      <ion-nav-view name="borrowitem-tab" class="has-header"></ion-nav-view>
+    </ion-tab>
 
-   <ion-content>
-     <ion-list ng-init="loadScript()">
-
-       <ion-item ng-repeat="loan in loans">
-		<ion-item ng-repeat="user in users">
-			 <img src="img/adam.jpg" width="100px" height="100px" ng-click="showImage()">
-			 	<h4 ng-click="showUserProfile()">{{user.username}}</h4>
-			 	<br>
-				{{loan.description}}
-				<br>
-				{{loan.available}}
-				<br>
-				{{loan.loan_name}}
-				<br>
-				{{loan.quntity}}
-				<br>
-				
-				<button class="button button-dark" ng-click="showMap()">
-     				 Git Direction
-    			</button>
-    	</ion-item>
-       </ion-item>
-		
-      </ion-list>
-	<script id="image-modal.html" type="text/ng-template">
-      <div class="modal image-modal transparent" ng-click="closeModal()">
-        <ion-pane class="transparent">
-          <img ng-src="{{imageSrc}}" class="fullscreen-image"/>
-        </ion-pane>
-      </div>
-    </script>
-   </ion-content>
-  
-      
-     
-</ion-view>
-
-
- 
+    <ion-tab title="Lend" icon="ion-person-stalker" href="#/home/lend">
+      <ion-nav-view name="lend-tab" class="has-header"></ion-nav-view>
+    </ion-tab>
+</ion-tabs>

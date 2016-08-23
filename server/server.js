@@ -4,7 +4,12 @@ var app = express();
 //var User = require('./models/user.js');
 var db = require('./DBconfig.js');
 // start listening to requests on port 8000
-
+app.use(function(req, res, next) {
+	res.setHeader('Access-Control-Allow-Origin', '*');
+	res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+	res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization, Access-Control-Allow-Origin, Access-Control-Allow-Headers');
+	next();
+});
 //app.use(bodyParser.urlencoded({extended: true}));
 //app.use(bodyParser.json());
 require('./config/middleware.js')(app,express);

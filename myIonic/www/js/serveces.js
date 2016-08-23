@@ -6,7 +6,7 @@ angular.module('Faz3a.Servces' , [])
 	var signin = function(user){
 		return $http({
 			method: 'POST',
-			url: localURI+'/api/signin',
+			url: '/api/signin/',
 			data: user
 		}).then(function(res){
 			return res.data;
@@ -16,37 +16,142 @@ angular.module('Faz3a.Servces' , [])
 	var signup = function(user){
 		return $http({
 			method: 'POST', 
-			url: localURI+'/api/signup',
+			url: '/api/signup',
 			data: user
 		}).then(function(res){
-			return res.data.token;
+			return res.data;
 		});
 	};
 
-	var viewLoans = function(){
+	var addloan = function(loan){
+		return $http({
+			method: 'POST',
+			url: '/api/addloan',
+			data: loan
+		}).then(function(res){
+			return res.data;
+		});
+	};
+
+	var viewLoans = function(id){
 		return $http({
 			method: 'GET',
-			url: localURI+'/api/viewLoans'
+			url: '/api/viewLoans/'+id
 		}).then(function(res){
 			return res.data;
 		});
 	};
 
 	var viewUsers = function(){
-		console.log("hello");
 		return $http({
 			method: 'GET',
-			url: localURI+'/api/viewUsers'
+			url: '/api/viewUsers'
 		}).then(function(res){
 			return res.data;
+		});
+	};
+
+	var lend = function(data){
+		return $http({
+			method: 'POST',
+			url: '/api/lend',
+			data: data
+		}).then(function(res){
+			return res.data;
+		});
+	};
+
+	var viewBorrowedItem = function(id){
+		return $http({
+			method: 'GET',
+			url: '/api/viewBorrowedItem/'+id
+		}).then(function(res){
+			return res.data;
+		});
+	};
+
+	var viewLend = function(id){
+		return $http({
+			method: 'GET',
+			url: '/api/viewLend/'+id
+		}).then(function(res){
+			return res.data;
+		});
+	};
+
+	var deleteLoan = function(id, data){
+		return $http({
+			method: 'POST',
+			url: '/api/deleteLoan/'+id,
+			data: data
+		}).then(function(res){
+			return res.data;
+		});
+	};
+
+	var activeLoan = function(id, data){
+		return $http({
+			method: 'POST',
+			url: '/api/activeLoan/'+id,
+			data: data
+		}).then(function(res){
+			return res.data;
+		});
+	};
+
+	var deactiveLoan = function(id, data){
+		return $http({
+			method: 'POST',
+			url: '/api/deactiveLoan/'+id,
+			data: data
+		}).then(function(res){
+			return res.data;
+		});
+	};
+
+	var getCurrentUserPosition = function(id){
+		return $http({
+			method: 'GET',
+			url: '/api/getCurrentUserPosition/'+id
+		}).then(function(res){
+			return res.data;
+		});
+	};
+
+	var getOwnerPosition = function(id){
+		return $http({
+			method: 'GET',
+			url: '/api/getOwnerPosition/'+id
+		}).then(function(res){
+			return res.data;
+		});
+	};
+
+	var upload = function(image){
+		return $http({
+			method: 'POST',
+			url: '/api/upload',
+			data: image
+		}).then(function(res){
+			return res.image;
 		});
 	};
 
 	return {
 		signin: signin,
 		signup: signup,
+		addloan: addloan,
 		viewLoans: viewLoans,
-		viewUsers: viewUsers
+		viewUsers: viewUsers,
+		lend: lend,
+		viewBorrowedItem: viewBorrowedItem,
+		viewLend: viewLend,
+		deleteLoan: deleteLoan,
+		activeLoan: activeLoan,
+		deactiveLoan: deactiveLoan,
+		getCurrentUserPosition: getCurrentUserPosition,
+		getOwnerPosition: getOwnerPosition,
+		upload: upload
 	};
 });
 

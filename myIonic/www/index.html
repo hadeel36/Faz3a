@@ -22,7 +22,7 @@
  
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA305PsnfRQfvpTeih6hhtOTc5dW7qiMTs&libraries=geometry"></script>
   </head>
-  <body ng-app="Faz3a" ng-controller='menuController'>
+  <body ng-app="Faz3a" ng-controller='menuController' id="body">
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
@@ -35,10 +35,8 @@
 
 
  
-  <ion-header-bar align-title="left" class="bar-positive">
+  <!-- <ion-header-bar align-title="left" class="bar-positive">
     <div class="buttons">
-      <!-- <button class="button" ng-click="doSomething()">Left Button</button> -->
-
     </div>
     <label class="item-input-wrapper">
       <i class="icon ion-ios-search placeholder-icon"></i>
@@ -50,18 +48,53 @@
   </ion-header-bar>
   <ion-content class="has-header">
     Some content!
-  </ion-content>
+  </ion-content> -->
+  <!-- ------------------------------ -->
+ <!--  <div class="bar bar-header barassertive">
+    <div class="buttons buttons-left header-item">
+      <span class="left buttons">
+        <button class="button button-iocn button-clear ion-navicon"></button>
+      </span>
+    </div>
+      <div class="h1 title title-left light">
+        Faz3z
+      </div>
+      <div class="buttons buttons-right header-item">
+        <span class="right-buttons">
+          <button class="button button-icon button-clear ion-android-more-vertical"></button>
+        </span>
+      </div>
+  </div> -->
 
+  <ion-header-bar align-title="left" class="bar-positive">
+  <div class="buttons">
+     <span class="left buttons">
+        <button class="ion-chevron-left" ng-click="myGoBack()"></button>
+      </span>
+  </div>
+  <h1 class="title">Faz3a</h1>
+  <div class="buttons">
+    <span class="right-buttons">
+          <button class="button button-icon button-clear ion-android-more-vertical"></button>
+        </span>
+  </div>
+</ion-header-bar>
+<ion-content class="has-header">
+  Some content!
+</ion-content>
     <ion-nav-view></ion-nav-view>
 
   <script src="js/lib/angular/angular.js"></script>
   <script src="js/lib/angular-mocks/angular-mocks.js"></script>
   <script src="js/lib/angular-route/angular-route.js""></script>
   <script src="js/lib/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="js/lib/jquery/dist/jquery.min.js"></script>
+  <script src="js/lib/ngmap/build/scripts/ng-map.min.js"></script>
   <script src="js/serveces.js"></script>
   <script src="js/controllers/auth.js"></script>
   <script src="js/controllers/home.js"></script>
-   <script src="js/controllers/userProfile.js"></script>
+  <script src="js/controllers/userProfile.js"></script>
+  <script src="js/controllers/addloan.js"></script>
   <script src="js/controllers/map.js"></script>
   <script src="js/controllers/index.js"></script>
   <script src="app.js"></script>

@@ -4,21 +4,23 @@ var helpers = require('./helpers.js');
 module.exports = function (app, express) {
 	app.post('/api/signin', controller.signin);
 	app.post('/api/signup', controller.signup);
+	app.get('/api/viewLoans/:id', controller.viewLoans);
 
-	app.get('/api/viewLoans', controller.viewLoans);
 	app.get('/api/viewUsers', controller.viewUsers);
-	app.post('/api/addLoan', controller.addLoan);
+	app.post('/api/addloan', controller.addLoan);
+	app.post('/api/lend', controller.lend);
 
-	//  //app.post('/api/friends', helpers.decode, controller.addFriend);
+	app.get('/api/viewBorrowedItem/:id', controller.viewBorrowedItem);
+	app.get('/api/viewLend/:id', controller.viewLend);
+	app.post('/api/deleteLoan/:id', controller.deleteLoan);
+
+	app.post('/api/activeLoan/:id', controller.activeLoan);
+	app.post('/api/deactiveLoan/:id', controller.deactiveLoan);
+	app.get('/api/getCurrentUserPosition/:id', controller.getCurrentUserPosition);
+
+	app.get('/api/getOwnerPosition/:id', controller.getOwnerPosition);
+	app.post('/api/upload', controller.upload);
 	
-	//  app.get('/api/notes', helpers.decode, controller.viewNotes);
-	//  app.post('/api/notes', helpers.decode, controller.saveNote);
-	
-	// // app.post('/api/userprofile', helpers.decode, controller.addFriend);
-	//  app.get('/api/userprofil', helpers.decode, controller.show);
-	 
-	// app.post('/user/notes',controller.saveNote);
-    // app.post
 	app.use(helpers.errorLogger);
 	app.use(helpers.errorHandler);
 };

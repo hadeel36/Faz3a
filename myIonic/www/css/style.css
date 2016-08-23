@@ -6,12 +6,28 @@
 .app-logo {
 	text-align: center;
 }
+.borrow{
+  margin-left: 170px;
+  margin-top: -150px;
+}
+.tabs-positive > .tabs{
+background-color:rgb(250,128,114) !important;
+}
 
-#basic{
-	background-color: cornsilk;
-	margin: 100px;
-	width: 1380px;
-	height: 1700px;
+.tabs-background-positive >.tabs{
+  background-color:rgb(250,128,114) !important;
+}
+.button-block{
+    background-color:rgb(250,128,114) !important;
+
+}
+.title{
+  text-align: center !important;
+}
+
+#loan{
+  padding: 50px;
+  margin: 50px;
 }
 
 .img {
@@ -53,14 +69,36 @@
   }
 }
 
+.bar-positive{
+  background-color: rgb(250,128,114) !important;
+}
+
+body{
+  /*background-image: url("back.jpg") !important;*/
+  background-color: #FFA07A !important;
+}
+
 #map {
-  width: 700px;
-  height: 400px;
+  top: 60px;
+  padding: 10px;
+  margin: auto;
+  width: 1000px;
+  height: 500px;
+  align-items: center;
 }
 
 .popup {
   width: 725px !important;
 }
+
+.slider-slide h3{
+  color:#fff;
+  margin-top:10px;
+};
+    
+.scroll{
+  height:100%;
+};
 
 #profile-bg {
         position: fixed;

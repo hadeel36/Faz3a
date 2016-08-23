@@ -1,0 +1,43 @@
+ <ion-view>
+   <ion-content>
+  	 <!--  <ion-item>
+  	    <ion-avatar item-left ng-model="loan">
+  	      <img src="img/ben.png">
+  	    </ion-avatar>
+  	    <h2>{{loan.fullname}}</h2>
+  	    <p>Ugh. As if.</p>
+  	  </ion-item>
+     <ion-list > -->
+		<ion-item ng-repeat="loan in loans" ng-if="loan.active">
+
+			 <img src="img/adam.jpg" width="150px" height="150px" ng-click="showImage()">
+			 <div class="borrow">
+			 	<h3 g-click="showUserProfile()">Owner Name: {{loan.fullname}}</h3>
+			 	<br>
+				<h3>Description: {{loan.description}}</h3>
+				<br>
+				<h3>Available: {{loan.available}}</h3>
+				<br>
+				<h3> Loan Name: {{loan.loan_name}}</h3>
+				<br>
+				</div>
+				<button class="button button-dark" ng-click="showMap(loan.userid)">
+     				 Git Direction
+    			</button>
+    			<button class="button button-dark" ng-init="loan.active=true" ng-click="lend($index)">
+     				 Lend
+    			</button>
+    	</ion-item>
+      </ion-list>
+	<script id="image-modal.html" type="text/ng-template">
+      <div class="modal image-modal transparent" ng-click="closeModal()">
+        <ion-pane class="transparent">
+          <img ng-src="{{imageSrc}}" class="fullscreen-image"/>
+        </ion-pane>
+      </div>
+    </script>
+   </ion-content>           
+</ion-view>
+
+
+ 

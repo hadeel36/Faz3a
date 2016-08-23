@@ -1,11 +1,16 @@
 angular.module('Faz3a.home' , ['ionic'])
 
-.controller('HomeController', function($scope, Auth, $ionicModal, $location){
-
+.controller('HomeController', function($scope, Auth, $ionicModal, $location, $window){
+    $scope.myGoBack = function() {
+      $ionicHistory.goBack();
+    };
 	$scope.viewLoans = function(){
-		Auth.viewLoans()
+        var id = $window.localStorage.getItem('user');
+        console.log(id);
+		Auth.viewLoans(id)
 		.then(function(data){
 			$scope.loans = data.data;
+            console.log('loans',$scope.loans);
 		})
 		.catch(function(error){
 			throw error;
@@ -18,7 +23,6 @@ angular.module('Faz3a.home' , ['ionic'])
         Auth.viewUsers()
         .then(function(data){
             $scope.users = data.data;
-            console.log($scope.users);
         })
         .catch(function(error){
             throw error;
@@ -26,6 +30,88 @@ angular.module('Faz3a.home' , ['ionic'])
         });
     }
     $scope.viewUsers();
+
+    $scope.lend = function(index){
+        $scope.loans[index].active = false;
+        $scope.loans[index].lend = true;
+        $scope.loans[index].borrowedperson = $window.localStorage.getItem('user');
+        Auth.lend($scope.loans[index])
+        .then(function(loan){
+            console.log(loan);
+        }).catch(function(error){
+            throw error;
+            console.log(error);
+        });
+    }
+
+    $scope.viewBorrowedItem = function(){
+        var id = $window.localStorage.getItem('user');
+        Auth.viewBorrowedItem(id)
+        .then(function(data){
+            $scope.borroweditem = data.data;
+        }).catch(function(error){
+            throw error;
+            console.log(error);
+        });
+    }
+    $scope.viewBorrowedItem();
+
+    $scope.viewLend = function(){
+        var id = $window.localStorage.getItem('user');
+        Auth.viewLend(id)
+        .then(function(data){
+            $scope.lends = data.data;
+            console.log($scope.lends);
+        }).catch(function(error){
+            throw error;
+            console.log(error);
+        });
+    }
+    $scope.viewLend();
+
+    $scope.deleteLoan = function(lend){
+        console.log(lend);
+        var id = lend.id;
+        Auth.deleteLoan(id, lend)
+        .then(function(data){
+            console.log(id);
+        }).catch(function(error){
+            throw error;
+            console.log(error);
+        });
+    }
+
+    $scope.activeLoan = function(lend){
+        if(lend.active === true){
+            alert("its already activated");
+        }else{
+            var id = lend.id;
+            lend.active = true;
+            Auth.activeLoan(id, lend)
+            .then(function(data){
+                console.log(data);
+             }).catch(function(error){
+                throw error;
+                console.log(error);
+            });
+        }
+    }
+
+    $scope.deactiveLoan = function(lend){
+        if(lend.lend === false){
+            alert("its already deactivated");
+        }else{
+            var id = lend.id;
+            lend.lend = false;
+            Auth.deactiveLoan(id, lend)
+            .then(function(data){
+                console.log(data);
+            }).catch(function(error){
+                throw error;
+                console.log(error);
+            });
+        }
+    }
 
 	 $ionicModal.fromTemplateUrl('image-modal.html', {
             scope: $scope,
@@ -48,7 +134,10 @@ angular.module('Faz3a.home' , ['ionic'])
             $scope.openModal();
         }; 
 
-    $scope.showMap = function(){
+    $scope.showMap = function(id){
+        var ownerId = id;
+        console.log("owner",ownerId);
+        $window.localStorage.setItem('ownerId',ownerId);
         $location.path('/map');
     };
 

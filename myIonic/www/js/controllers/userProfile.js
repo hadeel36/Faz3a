@@ -1,6 +1,10 @@
 angular.module('Faz3z.Profile' , ['ionic'])
 
-.controller('userProfileController', function($scope, Auth){
+.controller('userProfileController', function($scope, Auth, $location){
+
+	$scope.myGoBack = function() {
+	  $ionicHistory.goBack();
+	};
 
 	$scope.viewUsers = function(){
 		Auth.viewUsers()
@@ -11,5 +15,9 @@ angular.module('Faz3z.Profile' , ['ionic'])
 			throw error;
 			console.log(error);
 		});
+	}
+
+	$scope.addloan = function(){
+		$location.path('addloan');
 	}
 });

@@ -10,10 +10,10 @@
     "start": "",
     "test": "istanbul cover -x '*Spec.js' cover -x 'loan.js' cover -x 'user.js' node_modules/.bin/_mocha -- -R test ./test/*.js",
     "server-test": "mocha",
-    "postinstall" : "npm install -g bower; bower install;"
+    "postinstall": "npm install -g bower; bower install;"
   },
   "engines": {
-  "node": "4.4.7"
+    "node": "4.4.7"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
@@ -32,6 +32,7 @@
     "knex": "~0.6.10",
     "mocha": "^1.17.1",
     "morgan": "^1.7.0",
+    "ng-upload": "^0.1.0",
     "nodemon": "^1.2.1",
     "request": "^2.34.0",
     "sqlite3": "~3.1.0"

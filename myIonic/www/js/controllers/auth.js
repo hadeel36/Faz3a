@@ -1,6 +1,9 @@
 angular.module('Faz3a.Auth' , ['ionic'])
 
 .controller('Authcontroller' , function($scope ,$window, $location, Auth){
+	$scope.myGoBack = function() {
+	  $ionicHistory.goBack();
+	};
 	$scope.user = {};
 	$scope.lat = 0;
 	$scope.lng = 0;
@@ -9,6 +12,9 @@ angular.module('Faz3a.Auth' , ['ionic'])
 		Auth.signin($scope.user)
 		.then(function(data){
 			$window.localStorage.setItem('session',data.token);
+			$window.localStorage.setItem('user',data.user);
+			console.log(data.user);
+			console.log(data);
 			$location.path('/home');
 		})
 		.catch(function(error){
@@ -25,6 +31,8 @@ angular.module('Faz3a.Auth' , ['ionic'])
 				Auth.signup($scope.user)
 				.then(function(data){
 				$window.localStorage.setItem('session',data.token);
+				$window.localStorage.setItem('user',data.userId);
+				console.log(data.id);
 				$location.path('/home');
 			})
 				.catch(function(error){

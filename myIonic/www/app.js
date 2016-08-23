@@ -10,6 +10,7 @@ angular.module('Faz3a', ['ionic',
                         'Faz3a.home',
                         'Faz3a.map',
                         'Faz3z.Profile',
+                        'Faz3z.addLoan',
                         'Faz3a.index',
                         'Faz3a.Servces',
                         'ui.router'])
@@ -54,22 +55,58 @@ angular.module('Faz3a', ['ionic',
     controller: 'Authcontroller'
   })
 
-  .state('home', {
-    url: '/home',
-    templateUrl: 'js/templates/home.html',
-    controller: 'HomeController'
-  })
-
   .state('map', {
     url: '/map',
     templateUrl: 'js/templates/map.html',
     controller: 'MapController'
   })
 
+  .state('home', {
+    url: '/home',
+    templateUrl: 'js/templates/home.html',
+    controller: 'HomeController'
+  })
+
+  .state('home.borrow', {
+          url: '/borrow',
+          views: {
+            'borrow-tab': {
+              templateUrl: 'js/templates/borrow.html',
+              controller: 'HomeController'
+            }
+          }
+  })
+
+  .state('home.borrowitem', {
+          url: '/borrowitem',
+          views: {
+            'borrowitem-tab': {
+              templateUrl: 'js/templates/borrowitem.html',
+              controller: 'HomeController'
+            }
+          }
+  })
+
+  .state('home.lend', {
+          url: '/lend',
+          views: {
+            'lend-tab': {
+              templateUrl: 'js/templates/lend.html',
+              controller: 'HomeController'
+            }
+          }
+  })
+
   .state('userProfile', {
     url: '/userProfile',
     templateUrl: 'js/templates/userProfile.html',
     controller: 'userProfileController'
+  })
+
+  .state('addloan', {
+    url: '/addloan',
+    templateUrl: 'js/templates/addloan.html',
+    controller: 'addLoanController'
   });
 
   $urlRouterProvider.otherwise('/signin');
