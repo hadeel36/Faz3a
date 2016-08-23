@@ -2,7 +2,7 @@
    <ion-content>
      <ion-list>
        <ion-item ng-repeat="lend in lends">
-			 <img src="img/adam.jpg" width="100px" height="100px" ng-click="showImage()">
+			 <img src={{lend.loanimage}} width="100px" height="100px" ng-click="showImage(lend.loanimage)">
 			 	<div class="borrow">
         <h3 g-click="showUserProfile()">Owner Name: {{lend.fullname}}</h3>
         <br>

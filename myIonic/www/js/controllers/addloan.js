@@ -59,6 +59,7 @@ angular.module('Faz3z.addLoan' , ['ionic'])
         uploadToIMGUR(IMGUR_CLIENT_ID, imgData, function(result){
           $scope.loan.image = result.link;
           $scope.addloan();
+          
           console.log($scope.loan.image);
         });
       })

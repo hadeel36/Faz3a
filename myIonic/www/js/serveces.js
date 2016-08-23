@@ -6,7 +6,7 @@ angular.module('Faz3a.Servces' , [])
 	var signin = function(user){
 		return $http({
 			method: 'POST',
-			url: '/api/signin/',
+			url: onlineURI+'/api/signin/',
 			data: user
 		}).then(function(res){
 			return res.data;
@@ -16,7 +16,7 @@ angular.module('Faz3a.Servces' , [])
 	var signup = function(user){
 		return $http({
 			method: 'POST', 
-			url: '/api/signup',
+			url:onlineURI+'/api/signup',
 			data: user
 		}).then(function(res){
 			return res.data;
@@ -26,7 +26,7 @@ angular.module('Faz3a.Servces' , [])
 	var addloan = function(loan){
 		return $http({
 			method: 'POST',
-			url: '/api/addloan',
+			url: onlineURI+'/api/addloan',
 			data: loan
 		}).then(function(res){
 			return res.data;
@@ -36,7 +36,7 @@ angular.module('Faz3a.Servces' , [])
 	var viewLoans = function(id){
 		return $http({
 			method: 'GET',
-			url: '/api/viewLoans/'+id
+			url: onlineURI+'/api/viewLoans/'+id
 		}).then(function(res){
 			return res.data;
 		});
@@ -45,7 +45,7 @@ angular.module('Faz3a.Servces' , [])
 	var viewUsers = function(){
 		return $http({
 			method: 'GET',
-			url: '/api/viewUsers'
+			url: onlineURI+'/api/viewUsers'
 		}).then(function(res){
 			return res.data;
 		});
@@ -54,7 +54,7 @@ angular.module('Faz3a.Servces' , [])
 	var lend = function(data){
 		return $http({
 			method: 'POST',
-			url: '/api/lend',
+			url: onlineURI+'/api/lend',
 			data: data
 		}).then(function(res){
 			return res.data;
@@ -64,7 +64,7 @@ angular.module('Faz3a.Servces' , [])
 	var viewBorrowedItem = function(id){
 		return $http({
 			method: 'GET',
-			url: '/api/viewBorrowedItem/'+id
+			url: onlineURI+'/api/viewBorrowedItem/'+id
 		}).then(function(res){
 			return res.data;
 		});
@@ -73,7 +73,7 @@ angular.module('Faz3a.Servces' , [])
 	var viewLend = function(id){
 		return $http({
 			method: 'GET',
-			url: '/api/viewLend/'+id
+			url: onlineURI+'/api/viewLend/'+id
 		}).then(function(res){
 			return res.data;
 		});
@@ -82,7 +82,7 @@ angular.module('Faz3a.Servces' , [])
 	var deleteLoan = function(id, data){
 		return $http({
 			method: 'POST',
-			url: '/api/deleteLoan/'+id,
+			url: onlineURI+'/api/deleteLoan/'+id,
 			data: data
 		}).then(function(res){
 			return res.data;
@@ -92,7 +92,7 @@ angular.module('Faz3a.Servces' , [])
 	var activeLoan = function(id, data){
 		return $http({
 			method: 'POST',
-			url: '/api/activeLoan/'+id,
+			url: onlineURI+'/api/activeLoan/'+id,
 			data: data
 		}).then(function(res){
 			return res.data;
@@ -102,7 +102,7 @@ angular.module('Faz3a.Servces' , [])
 	var deactiveLoan = function(id, data){
 		return $http({
 			method: 'POST',
-			url: '/api/deactiveLoan/'+id,
+			url: onlineURI+'/api/deactiveLoan/'+id,
 			data: data
 		}).then(function(res){
 			return res.data;
@@ -112,7 +112,7 @@ angular.module('Faz3a.Servces' , [])
 	var getCurrentUserPosition = function(id){
 		return $http({
 			method: 'GET',
-			url: '/api/getCurrentUserPosition/'+id
+			url: onlineURI+'/api/getCurrentUserPosition/'+id
 		}).then(function(res){
 			return res.data;
 		});
@@ -121,7 +121,7 @@ angular.module('Faz3a.Servces' , [])
 	var getOwnerPosition = function(id){
 		return $http({
 			method: 'GET',
-			url: '/api/getOwnerPosition/'+id
+			url: onlineURI+'/api/getOwnerPosition/'+id
 		}).then(function(res){
 			return res.data;
 		});
@@ -130,7 +130,7 @@ angular.module('Faz3a.Servces' , [])
 	var upload = function(image){
 		return $http({
 			method: 'POST',
-			url: '/api/upload',
+			url: onlineURI+'/api/upload',
 			data: image
 		}).then(function(res){
 			return res.image;

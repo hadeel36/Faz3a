@@ -129,8 +129,9 @@ angular.module('Faz3a.home' , ['ionic'])
         $scope.$on('$destroy', function() {
             $scope.modal.remove();
         });
-        $scope.showImage = function() {
-            $scope.imageSrc = "img/adam.jpg";
+        $scope.showImage = function(image) {
+            console.log("image",image)
+            $scope.imageSrc = image;
             $scope.openModal();
         }; 
 
